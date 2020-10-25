@@ -8,8 +8,9 @@
 7. cmd+r
 
 ## To add another c file and binary
-1. Add a new file called whatever.c
-2. Open CMakeLists.txt
+1. Add a new file called whatever.c (you can do this in Xcode)
+2. Open CMakeLists.txt (also doable in Xcode)
 3. Add a line at the end -- `add_program(whatever)`
-4. rerun `cmake -G Xcode -B build`
-5. Maybe reoopen Xcode? Sometimes it can detect the change.
+4. Push cmd+b. Xcode will trigger CMake to regenerate the Xcode project before
+   building.
+5. Select the new Xcode target.

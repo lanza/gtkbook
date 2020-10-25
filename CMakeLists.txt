@@ -10,10 +10,14 @@ add_compile_options(-fcolor-diagnostics)
 
 find_package(GTK2 REQUIRED)
 
-add_executable(helloworld hellogtk.c)
-target_link_libraries(
-  helloworld
-  PUBLIC
-  ${GTK2_LIBRARIES}
-)
-target_include_directories(helloworld PUBLIC ${GTK2_INCLUDE_DIRS})
+function(add_program name)
+  add_executable(${name} ${name}.c)
+  target_link_libraries(
+    ${name}
+    PUBLIC
+    ${GTK2_LIBRARIES}
+  )
+  target_include_directories(${name} PUBLIC ${GTK2_INCLUDE_DIRS})
+endfunction()
+
+add_program(hellogtk)

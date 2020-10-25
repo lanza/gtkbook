@@ -21,3 +21,4 @@ function(add_program name)
 endfunction()
 
 add_program(hellogtk)
+add_program(helloC)
